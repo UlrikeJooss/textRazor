@@ -46,8 +46,7 @@ count_spaces(text) # output: 9
 # Count special characters
 text <- "?? This is a simple example!! \%\% This is a simple text.&$"
 count_specs(text) # output: 20
-
-````
+```
 
 ## Installation
 
