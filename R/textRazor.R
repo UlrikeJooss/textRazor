@@ -112,7 +112,7 @@ word_freq <- function(text) {
 #'
 #' @examples
 #' text <- "This is a simple example. This is a simple text."
-#' count_spaces(text) output: 9
+#' count_spaces(text) # output: 9
 #'
 count_spaces <- function(text) {
   # Check if the input is a character vector
@@ -139,7 +139,7 @@ count_spaces <- function(text) {
 #'
 #' @examples
 #' text <- "?? This is a simple example!! %% This is a simple text.&$"
-#' count_specs(text) output: 20
+#' count_specs(text) # output: 20
 #'
 count_specs <- function(text) {
   # Check if the input is a character vector
