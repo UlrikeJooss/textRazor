@@ -74,31 +74,26 @@ count_char <- function(text) {
 #'       6    text         1
 #'
 word_freq <- function(text) {
-  # Check if the input is a character vector
-  if (!is.character(text)) {
-    stop("Input 'text' must be a character vector.")
+  if (nchar(text) == 0) {
+    stop("Please insert a sentence!")
   }
-
-  # Convert the text to lowercase
+  
+  # Convert text to lowercase
   text <- tolower(text)
-
-  # Tokenize the text into words
+  
+  # Split text into words
   words <- strsplit(text, "\\W+")
-
-  # Count word frequencies
-  word_freq_table <- table(unlist(words))
-
-  # Create a data frame with word frequencies
-  result <- data.frame(Word = names(word_freq_table),
-                       Frequency = as.numeric(word_freq_table))
-
-  # Sort the data frame in descending order of frequency
-  result <- result[order(-result$Frequency), ]
-  rownames(result) <- NULL
-
+  
+  # Count word frequency
+  word_table <- table(words)
+  
+  # Convert word_table to data frame
+  result <- as.data.frame(word_table, stringsAsFactors = FALSE)
+  colnames(result) <- c("Word", "Frequency")
+  result <- result[result$Word != "", ]  # Remove empty word entries
+  
   return(result)
 }
-
 
 
 #' Count Spaces
@@ -142,16 +137,16 @@ count_spaces <- function(text) {
 #' count_specs(text) # output: 20
 #'
 count_specs <- function(text) {
-  # Check if the input is a character vector
-  if (!is.character(text)) {
-    stop("Input 'text' must be a character vector.")
-  }
-
-  # Count special characters in the text
-  num_special_chars <- sum(!grepl("[A-Za-z0-9]", strsplit(text, "")[[1]]))
-
-  return(num_special_chars)
+  # Überprüfen, ob die Eingabe ein Zeichenvektor ist
+  stopifnot(is.character(text))
+  
+  # Aufteilen der Zeichenkette in einzelne Zeichen
+  chars <- unlist(strsplit(text, ""))
+  
+  # Zählen der Sonderzeichen
+  count <- sum(!grepl("[A-Za-z0-9[:space:]]", chars))
+  
+  return(count)
 }
-
 
 
