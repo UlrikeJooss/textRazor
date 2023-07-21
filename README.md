@@ -6,7 +6,7 @@
 
 The `textRazor` R package is a lightweight tool for basic text analysis. 
 It provides simple functions to count words, calculate word frequency, 
-count spaces, and count special characters in a given text.
+count spaces, and count characters and only special characters in a given text.
 
 ## Features
 - count_words(): Count the number of words in a text.
