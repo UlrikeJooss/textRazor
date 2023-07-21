@@ -1,0 +1,12 @@
+Package: textRazor
+Type: Package
+Title: textRazor R package for quantitative text analysis
+Version: 0.0.0.9000
+Authors@R: 
+    person("Ulrike", "Jooss", , "ulrike.jooss@web.de", role = c("aut", "cre"))
+Maintainer: The package maintainer <ulrike.jooss@web.de>
+Description: R package for quantitative text analysis
+License: MIT
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
