@@ -18,6 +18,6 @@ Special characters are any non-alphabetic and non-numeric characters.
 }
 \examples{
 text <- "?? This is a simple example!! \%\% This is a simple text.&$"
-count_specs(text) output: 20
+count_specs(text) # output: 20
 
 }

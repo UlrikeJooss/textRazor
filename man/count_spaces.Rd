@@ -17,6 +17,6 @@ This function takes a text as input and returns the number of spaces in the text
 }
 \examples{
 text <- "This is a simple example. This is a simple text."
-count_spaces(text) output: 9
+count_spaces(text) # output: 9
 
 }
